@@ -1,0 +1,18 @@
+{
+    "transaction_id": "Unique transaction code",
+    "uid": "UID of RezPay receive transaction",
+    "account": {
+        "id": "Account ID RezPay receive transaction",
+        "name": "Account name",
+        "provider": "Account type (momo, vietcombank, techcombank, vnpayqr)"
+    },
+    "connect_info": {
+        "id": "ID of API RezPay receive transaction",
+        "name": "API Name RezPay receive transaction"
+    },
+    "type": "transaction",
+    "service_source": "(momo | vietcombank | techcombank | vnpayqr)",
+    "amount": "Transaction amount",
+    "description": "Message, format by provider,should use regex to read info",
+    "create_date": "Transaction created date by format MySQL"
+}
