@@ -1,29 +1,20 @@
 <?php
-//Your Config
-//require_once(__DIR__ . '/config.php');
-
-
-// Secret key, from "Quản lý API" - "Thông tin API" on Rezer App
+// Secret key from Rezer App
 $SECRET_KEY = "***************************"; 
+$signature = $_SERVER["HTTP_REZPAY_SIGNATURE"];
+$algoFromHeader = $_SERVER["HTTP_REZPAY_SIGNATURE_ALGO"];
+$algo = "SHA256";
 
-// Confirm signature
-$signature = $_SERVER["HTTP_REZPAY_SIGNATURE"]; // Signature server in header RezPay-Signature
-$algoFromHeader = $_SERVER["HTTP_REZPAY_SIGNATURE_ALGO"]; // Algorithm HMAC
+$rawPayload = file_get_contents('php://input');
+$mySignature = hash_hmac($algo, $rawPayload, $SECRET_KEY);
 
-$algo = "SHA256"; // Default is SHA256
-//
-$rawPayload = file_get_contents('php://input'); // Get payload
-$mySignature = hash_hmac($algo, $rawPayload, $SECRET_KEY); // Create signature with SECRET KEY
-//
 if ($mySignature != $signature) {
 	http_response_code(403);
 	die('Signature is invalid.');
 }
 
-//Signature is valid , you can save this transaction log
-$payload = json_decode($rawPayload,true); // Decode json
-
-$data_insert = array(
+$payload = json_decode($rawPayload,true);
+$dataInsert = array(
 	'transaction_id' => $payload['transaction_id'],
 	'uid' => $payload['uid'],
 	'account_id' => $payload['account']['id'],
@@ -38,10 +29,8 @@ $data_insert = array(
 	'create_date' => $payload['create_date'],
 );
 
-//My Custom API, to save data in database
-callAPI('callback_addBankTransfer.api',array(),$data_insert);
-
-http_response_code(200); // Tell RezPay server that callback is success in order not to Re-callback
-echo 'Giao dịch thành công';
-
+//Function is customed to send transaction data to API AddBankTransfer.php
+callAPI('callback_addBankTransfer.api',array(),$dataInsert);
+// Response that callback is success in order not to Re-callback
+http_response_code(200);
 ?>
