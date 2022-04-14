@@ -1,0 +1,18 @@
+{
+    "transaction_id": "8",
+    "uid": "1",
+    "account": {
+        "id": "1",
+        "name": "xxxxxxx",
+        "provider": "momo"
+    },
+    "connect_info": {
+        "id": "1",
+        "name": "RezPay"
+    },
+    "type": "transaction",
+    "service_source": "momo",
+    "amount": "50000",
+    "description": "MOMO.xxx tu xxx toi xxx",
+    "create_date": "2020-12-24 13:48:07"
+}
