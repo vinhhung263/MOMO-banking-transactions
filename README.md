@@ -2,7 +2,8 @@
 Listen and write every banking transaction. This source based on Rezer API, created by github.com/takashato and i just simplize for PHP usage with a sample for e-wallet MOMO
 
 *Env:
-- xampp, PHP
+- XAMPP, PHP
+
 *Database:
 - MySQL
 
