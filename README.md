@@ -1,5 +1,5 @@
 # E-wallet-banking-transactions
-Listen and write every banking transactions (Sample for e-wallet MOMO). This source based on Rezer API, created by github.com/takashato and i just simplize for PHP usage
+Listen and write every banking transactions. This source based on Rezer API, created by github.com/takashato and i just simplize for PHP usage and use sample for e-wallet MOMO
 
 
 - file Word "Rezer - Login and Register API Turtorial.docx"  
