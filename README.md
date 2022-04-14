@@ -1,5 +1,5 @@
-# MOMO-banking-transactions
-Listen and write every banking transactions (MOMO, VNPAY,Vietcombank,...). This source based on Rezer API, created by github.com/takashato and i just simplize for PHP usage
+# E-wallet-banking-transactions
+Listen and write every banking transactions (Sample for e-wallet MOMO). This source based on Rezer API, created by github.com/takashato and i just simplize for PHP usage
 
 
 - file Word "Rezer - Login and Register API Turtorial.docx"  
