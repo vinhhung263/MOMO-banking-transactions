@@ -29,7 +29,7 @@ $dataInsert = array(
 	'create_date' => $payload['create_date'],
 );
 
-//Function is customed to send transaction data to API AddBankTransfer.php
+//Function is customed to send transaction data to API addBankTransfer.php
 callAPI('callback_addBankTransfer.api',array(),$dataInsert);
 // Response that callback is success in order not to Re-callback
 http_response_code(200);
